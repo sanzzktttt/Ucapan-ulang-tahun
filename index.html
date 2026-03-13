@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Kirimin Pesan Dari Seseorangg Kiwwwww 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --pink: #f9a8c9;
+    --pink-dark: #f472b6;
+    --pink-light: #fde8f3;
+    --pink-bg: #fcd5e8;
+    --cream: #fff9f0;
+    --stripe1: #fbc8df;
+    --stripe2: #f9b4d3;
+    --brown: #8b5e3c;
+    --text: #5a3040;
+    --white: #ffffff;
+    --shadow: rgba(244,114,182,0.3);
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f5c6de;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* PHONE FRAME */
+  .phone {
+    width: 340px;
+    height: 620px;
+    border-radius: 36px;
+    border: 3px solid #e880b0;
+    box-shadow: 0 20px 60px rgba(200,80,130,0.35), inset 0 0 0 2px rgba(255,255,255,0.5);
+    overflow: hidden;
+    position: relative;
+    background: var(--stripe1);
+  }
+
+  /* STRIPED BACKGROUND */
+  .bg-stripes {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      var(--stripe1) 0px,
+      var(--stripe1) 18px,
+      var(--stripe2) 18px,
+      var(--stripe2) 36px
+    );
+    z-index: 0;
+  }
+
+  /* SCATTERED HEARTS */
+  .hearts-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .h {
+    position: absolute;
+    font-size: 14px;
+    opacity: 0.55;
+    animation: floatHeart 4s ease-in-out infinite;
+  }
+  @keyframes floatHeart {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+  }
+
+  /* CONTENT */
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 24px 20px 20px;
+  }
+
+  /* POLAROID CARD */
+  .polaroid-wrap {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .polaroid-back {
+    position: absolute;
+    width: 200px;
+    height: 230px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 3px 4px 12px rgba(0,0,0,0.15);
+    top: 5px; left: 5px;
+    transform: rotate(-4deg);
+    z-index: 0;
+  }
+  .polaroid {
+    width: 200px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 4px 6px 18px rgba(0,0,0,0.18);
+    padding: 12px 12px 24px;
+    position: relative;
+    z-index: 1;
+    animation: wobble 3s ease-in-out infinite;
+  }
+  @keyframes wobble {
+    0%,100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1.5deg); }
+  }
+  .polaroid-img {
+    width: 100%;
+    height: 158px;
+    background: linear-gradient(145deg, #ffe4f0, #ffd6ea);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* PANDA SVG */
+  .panda { width: 110px; height: 130px; }
+
+  .polaroid-caption {
+    text-align: center;
+    margin-top: 8px;
+    font-family: 'Pacifico', cursive;
+    font-size: 15px;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+  .heart-red { color: #e05a7a; }
+
+  /* NAVIGATION ARROWS */
+  .nav-arrows {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .arrow-btn {
+    width: 36px; height: 36px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 10px var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+    color: var(--pink-dark);
+  }
+  .arrow-btn:hover { transform: scale(1.1); box-shadow: 0 5px 14px var(--shadow); }
+  .arrow-btn:active { transform: scale(0.95); }
+
+  /* KIRIM PESAN BUTTON */
+  .kirim-btn {
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 11px 36px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(236,72,153,0.4);
+    letter-spacing: 0.5px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-top: 4px;
+  }
+  .kirim-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(236,72,153,0.5); }
+  .kirim-btn:active { transform: scale(0.97); }
+
+  /* MODAL OVERLAY */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(240,150,185,0.45);
+    backdrop-filter: blur(3px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .overlay.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* MODAL BOX */
+  .modal {
+    background: white;
+    border-radius: 20px;
+    padding: 24px 20px 20px;
+    width: 260px;
+    box-shadow: 0 10px 40px rgba(200,80,130,0.3);
+    transform: scale(0.85) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    text-align: center;
+  }
+  .overlay.show .modal {
+    transform: scale(1) translateY(0);
+  }
+
+  .modal-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .modal textarea {
+    width: 100%;
+    height: 90px;
+    border: 2px solid #fbc8df;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    resize: none;
+    outline: none;
+    background: #fff5fa;
+    transition: border-color 0.2s;
+  }
+  .modal textarea:focus { border-color: var(--pink-dark); }
+  .modal textarea::placeholder { color: #d4a0b8; }
+
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    justify-content: center;
+  }
+  .btn-cancel {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #999;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-cancel:hover { background: #e0e0e0; }
+
+  .btn-send {
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+    border: none;
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(236,72,153,0.35);
+    transition: transform 0.15s;
+  }
+  .btn-send:hover { transform: scale(1.05); }
+  .btn-send:active { transform: scale(0.97); }
+
+  /* TOAST */
+  .toast {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #fff;
+    border-radius: 50px;
+    padding: 9px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+    box-shadow: 0 4px 16px var(--shadow);
+    white-space: nowrap;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* CAPTION MESSAGES */
+  .caption-messages {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="bg-stripes"></div>
+
+  <!-- Floating hearts bg -->
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <div class="content">
+
+    <!-- POLAROID -->
+    <div class="polaroid-wrap">
+      <div class="polaroid-back"></div>
+      <div class="polaroid">
+        <div class="polaroid-img">
+          <!-- Cute Panda SVG -->
+          <svg class="panda" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body -->
+            <ellipse cx="55" cy="92" rx="32" ry="30" fill="white" stroke="#ddd" stroke-width="1"/>
+            <!-- Ears (big black) -->
+            <circle cx="26" cy="42" r="13" fill="#2a2a2a"/>
+            <circle cx="84" cy="42" r="13" fill="#2a2a2a"/>
+            <!-- Inner ears -->
+            <circle cx="26" cy="42" r="7" fill="#555"/>
+            <circle cx="84" cy="42" r="7" fill="#555"/>
+            <!-- Head -->
+            <circle cx="55" cy="55" r="28" fill="white" stroke="#eee" stroke-width="1"/>
+            <!-- Eye patches -->
+            <ellipse cx="42" cy="52" rx="9" ry="8" fill="#2a2a2a" transform="rotate(-10 42 52)"/>
+            <ellipse cx="68" cy="52" rx="9" ry="8" fill="#2a2a2a" transform="rotate(10 68 52)"/>
+            <!-- Eyes -->
+            <circle cx="42" cy="52" r="4" fill="white"/>
+            <circle cx="68" cy="52" r="4" fill="white"/>
+            <circle cx="43" cy="51" r="2.5" fill="#1a1a1a"/>
+            <circle cx="69" cy="51" r="2.5" fill="#1a1a1a"/>
+            <!-- Eye shine -->
+            <circle cx="44" cy="50" r="1" fill="white"/>
+            <circle cx="70" cy="50" r="1" fill="white"/>
+            <!-- Nose area -->
+            <ellipse cx="55" cy="61" rx="8" ry="6" fill="#ffe0ec"/>
+            <ellipse cx="55" cy="60" rx="3" ry="2" fill="#e880a0"/>
+            <!-- Mouth -->
+            <path d="M50 65 Q55 70 60 65" stroke="#d06080" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Rosy cheeks -->
+            <circle cx="35" cy="62" r="6" fill="#ffb3cc" opacity="0.6"/>
+            <circle cx="75" cy="62" r="6" fill="#ffb3cc" opacity="0.6"/>
+            <!-- Arms -->
+            <ellipse cx="25" cy="100" rx="9" ry="16" fill="white" stroke="#ddd" stroke-width="1" transform="rotate(-20 25 100)"/>
+            <ellipse cx="85" cy="100" rx="9" ry="16" fill="white" stroke="#ddd" stroke-width="1" transform="rotate(20 85 100)"/>
+            <!-- Feet -->
+            <ellipse cx="42" cy="122" rx="11" ry="7" fill="#f5c842"/>
+            <ellipse cx="68" cy="122" rx="11" ry="7" fill="#f5c842"/>
+            <!-- Tummy spot -->
+            <ellipse cx="55" cy="96" rx="16" ry="14" fill="#f5e5ee" opacity="0.7"/>
+            <!-- Heart on tummy -->
+            <text x="47" y="102" font-size="14">🤍</text>
+          </svg>
+        </div>
+        <div class="polaroid-caption" id="caption">I Love You<span class="heart-red">❤</span></div>
+      </div>
+    </div>
+
+    <!-- NAV ARROWS -->
+    <div class="nav-arrows">
+      <button class="arrow-btn" onclick="prevCard()">‹</button>
+      <button class="arrow-btn" onclick="nextCard()">›</button>
+    </div>
+
+    <!-- KIRIM PESAN BUTTON -->
+    <button class="kirim-btn" onclick="openModal()">💌 Kirim Pesan</button>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="modal-title">Tulis pesan</div>
+      <textarea id="pesanInput" placeholder="Tulis sesuatu yang manis... 🌸"></textarea>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Batal</button>
+        <button class="btn-send" onclick="sendPesan()">Kirim 💌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">💖 Pesan terkirim!</div>
+</div>
+
+<script>
+  // Scatter hearts in background
+  const heartsBg = document.getElementById('heartsBg');
+  const heartEmojis = ['🩷','💗','💕','🤍','💖','💝','✨'];
+  for (let i = 0; i < 18; i++) {
+    const h = document.createElement('div');
+    h.className = 'h';
+    h.textContent = heartEmojis[i % heartEmojis.length];
+    h.style.left = `${Math.random() * 90}%`;
+    h.style.top = `${Math.random() * 90}%`;
+    h.style.fontSize = `${Math.random() * 8 + 10}px`;
+    h.style.animationDelay = `${Math.random() * 4}s`;
+    h.style.animationDuration = `${Math.random() * 2 + 3}s`;
+    heartsBg.appendChild(h);
+  }
+
+  // Card captions
+  const captions = [
+    'I Love You<span style="color:#e05a7a">❤</span>',
+    'Miss You<span style="color:#e05a7a">🥺</span>',
+    'You\'re Cute<span style="color:#e05a7a">💕</span>',
+    'Be Mine<span style="color:#e05a7a">💝</span>',
+    'Hug Me<span style="color:#e05a7a">🤗</span>',
+  ];
+  let idx = 0;
+  const caption = document.getElementById('caption');
+
+  function updateCaption() {
+    caption.style.opacity = 0;
+    caption.style.transform = 'translateY(6px)';
+    setTimeout(() => {
+      caption.innerHTML = captions[idx];
+      caption.style.transition = 'opacity 0.3s, transform 0.3s';
+      caption.style.opacity = 1;
+      caption.style.transform = 'translateY(0)';
+    }, 200);
+  }
+
+  function nextCard() {
+    idx = (idx + 1) % captions.length;
+    updateCaption();
+  }
+  function prevCard() {
+    idx = (idx - 1 + captions.length) % captions.length;
+    updateCaption();
+  }
+
+  // Modal
+  function openModal() {
+    document.getElementById('overlay').classList.add('show');
+    setTimeout(() => document.getElementById('pesanInput').focus(), 300);
+  }
+  function closeModal() {
+    document.getElementById('overlay').classList.remove('show');
+    document.getElementById('pesanInput').value = '';
+  }
+
+  // Send
+  function sendPesan() {
+    const val = document.getElementById('pesanInput').value.trim();
+    closeModal();
+    showToast(val ? `💌 "${val.slice(0,22)}${val.length>22?'...':''}"` : '💖 Pesan terkirim!');
+    launchHearts();
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  function launchHearts() {
+    for (let i = 0; i < 12; i++) {
+      setTimeout(() => {
+        const h = document.createElement('div');
+        h.style.cssText = `position:absolute;font-size:${Math.random()*12+16}px;left:${Math.random()*80+10}%;bottom:${Math.random()*20+20}%;z-index:30;pointer-events:none;animation:rise 1.8s ease forwards;`;
+        h.textContent = ['💖','💕','✨','💗','🌸'][Math.floor(Math.random()*5)];
+        document.querySelector('.phone').appendChild(h);
+        setTimeout(() => h.remove(), 2000);
+      }, i * 80);
+    }
+  }
+
+  // Rise animation
+  const style = document.createElement('style');
+  style.textContent = `@keyframes rise { 0%{opacity:1;transform:translateY(0) scale(1)} 100%{opacity:0;transform:translateY(-80px) scale(1.4)} }`;
+  document.head.appendChild(style);
+
+  // Close modal on overlay click
+  document.getElementById('overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+</body>
+</html>
